@@ -33,16 +33,16 @@
     font-size: 20px;
 }
 
-.botones {
+.my-buttons {
     display: flex;
 }
 
-.botones .btn-guardar {
+.my-buttons .btn-save {
     flex-basis: 2;
     font-weight: 600;
 }
 
-.botones .btn-cancelar {
+.my-buttons .btn-cancel {
     flex-grow: 1;
     font-weight: 600;
 }
@@ -64,10 +64,9 @@
     
 }
 
-.contenedor{
+.card-container{
     width: 100%;
     height: 630px;
-   
     margin-top: 10px;
     background-color: white;
 }

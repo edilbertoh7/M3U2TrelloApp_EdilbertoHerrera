@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="assets/img/trello.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <title>Trello APP</title>
 </head>
 <body>
+    <!--encabezado crear uneva tarea-->
+    <div class="my-container ms-2 mt-1">
+        <!--logo y boton nueva tarea-->
+        <div class="trello-align">
+
+            <div class="trello-align-left">
+                <img width="40" src="assets/img/trello.jpg" alt="">
+            </div>
+            <div class="trello-align-right">
+                <a href="#newtask" id="navbarDropdown" onclick="changeclass()" class="btn btn-danger"
+                    data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Crear una nueva tarea
+                </a>
+            </div>
+
+        </div>
+        <!--fin logo y boton nueva tarea-->
+
+    </div>
+    <!--fin encabezado crear uneva tarea-->
+
+    <!--cuerpo de las tareas-->
+    <div class="my-container trello-body ms-2 ">
+        <div class="trello-align">
+
+
+            <div class=" row trello-align-left">
+
+                <div class="col">Por Hacer
+                    <div id="contenedor1" class="card-container">
+                        <div id="task"  draggable="true" class="taskin mt-3">
+                            <h4>Titulo1</h4>
+                            <p>responsable User1</p>
+                            <p>fecha entrega 16/07/2022</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">En progreso
+                    <div id="contenedor2" class="card-container">
+                        
+                    </div>
+                </div>
+                <div class="col">Finalizadas
+                    <div id="contenedor3" class="card-container">
+                        
+                    </div>
+                </div>
+
+            </div>
+            <!--formulario nueva tarea-->
+            <div class=" trello-align-right">
+                <ul id="ulform" class="width-from color-form2 navbar-nav ms-auto">
+                    <li class="nav-item dropdown slow ">
+                        <div id="newtask" class="color-form my-form  trello-align collapse"
+                            aria-labelledby="navbarDropdown">
+
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">titulo</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">responsable</label>
+                                    <select class="form-control" name="responsble" id="responsble">
+                                        <option value="">--seleccionar--</option>
+                                        <option value="user01">user 01</option>
+                                        <option value="user02">user 02</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 form-check">
+
+                                    <label class="form-check-label" for="exampleCheck1">Plazo entrega</label>
+                                    <select class="form-control" name="plazo" id="plazo">
+                                        <option value="">--seleccionar--</option>
+                                        <option value="oneDay">1 Día</option>
+                                        <option value="twoDay">2 Días</option>
+                                        <option value="sevenDay">1 Semana</option>
+
+                                    </select>
+                                </div>
+                                <div class="my-buttons ">
+
+                                    <div class="btn-save">
+                                        <button type="button" class="btn btn-outline-primary">Guardar</button>
+                                    </div>
+                                    <div class="btn-cancel">
+                                        <button type="button" class="btn btn-outline-secondary">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                <!--fin formulario nueva tarea-->
+            </div>
+        </div>
+    </div>
+    <!--fin cuerpo de las tareas-->
     
+    <script src="assets/js/index.js" ></script>
 </body>
 </html>
