@@ -1,0 +1,24 @@
+{
+    "task":[
+        {
+            "id":1,
+            "title":"frontend",
+            "person":"edilberto",
+            "details":"desarrollo fronend",
+            "state":"done",
+            "deadline":1290410940,
+            "created":1615352159
+
+        },
+        {
+            "id":2,
+            "title":"backend",
+            "person":"edy",
+            "details":"desarrollo backend",
+            "state":"to-do",
+            "deadline":1290410940,
+            "created":1615352159
+
+        }
+    ]
+}
