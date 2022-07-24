@@ -72,9 +72,16 @@
 }
 .taskin{
     width: 322px;
-    height: 150px;
+    height: 160px;
     background-color: rgb(236, 183, 114);
     border: 1px solid black ;
    
 
+}
+h4{
+    font-size: 16px;
+    font-weight:600 ;
+}
+h6{
+    font-size: 11px;
 }

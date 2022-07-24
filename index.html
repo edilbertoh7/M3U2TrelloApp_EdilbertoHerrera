@@ -25,7 +25,7 @@
                 <img width="40" src="assets/img/trello.jpg" alt="">
             </div>
             <div class="trello-align-right">
-                <a href="#newtask" id="navbarDropdown" onclick="changeclass()" class="btn btn-danger"
+                <a href="#newtask" id="navbarDropdown"  class="btn btn-danger"
                     data-bs-toggle="collapse" aria-haspopup="true" aria-expanded="false" v-pre>
                     Crear una nueva tarea
                 </a>
@@ -41,26 +41,20 @@
     <div class="my-container trello-body ms-2 ">
         <div class="trello-align">
 
-
             <div class=" row trello-align-left">
 
-                <div class="col">Por Hacer
-                    <div id="contenedor1" class="card-container">
-                        <div id="task"  draggable="true" class="taskin mt-3">
-                            <h4>Titulo1</h4>
-                            <p>responsable User1</p>
-                            <p>fecha entrega 16/07/2022</p>
-
-                        </div>
+                <div  class="col">Por Hacer
+                    <div  id="contenedor1" class="card-container to_do">
+                       
                     </div>
                 </div>
                 <div class="col">En progreso
-                    <div id="contenedor2" class="card-container">
+                    <div id="contenedor2" class="card-container in_progress">
                         
                     </div>
                 </div>
                 <div class="col">Finalizadas
-                    <div id="contenedor3" class="card-container">
+                    <div id="contenedor3" class="card-container done">
                         
                     </div>
                 </div>
@@ -74,34 +68,32 @@
                             aria-labelledby="navbarDropdown">
 
                             <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">titulo</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">responsable</label>
-                                    <select class="form-control" name="responsble" id="responsble">
+                                <div >
+                                    <label  class="form-label">Nombre Tarea</label>
+                                    <input type="text" class="form-control" id="titletask"><br>
+                                    <label  class="form-label">Responsable</label><br>
+                                    <select class="form-control" id="responsible">
                                         <option value="">--seleccionar--</option>
                                         <option value="user01">user 01</option>
                                         <option value="user02">user 02</option>
                                     </select>
                                 </div>
-                                <div class="mb-3 form-check">
 
-                                    <label class="form-check-label" for="exampleCheck1">Plazo entrega</label>
-                                    <select class="form-control" name="plazo" id="plazo">
-                                        <option value="">--seleccionar--</option>
-                                        <option value="oneDay">1 Día</option>
-                                        <option value="twoDay">2 Días</option>
-                                        <option value="sevenDay">1 Semana</option>
+                                <div >
+                                    <label  class="form-label">Descripcion</label>
+                                    <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
 
-                                    </select>
+                                </div>
+                                <div class="form-check">
+
+                                    <label class="form-check-label" for="exampleCheck1">Fecha entrega</label>
+                                    <input class="form-control" type="date" id="end_date">
+                                   
                                 </div>
                                 <div class="my-buttons ">
 
                                     <div class="btn-save">
-                                        <button type="button" class="btn btn-outline-primary">Guardar</button>
+                                        <button onclick="new_task(titletask.value,responsible.value,description.value,end_date.value)" type="button" class="btn btn-outline-primary">Guardar</button>
                                     </div>
                                     <div class="btn-cancel">
                                         <button type="button" class="btn btn-outline-secondary">Cancelar</button>
@@ -116,7 +108,9 @@
         </div>
     </div>
     <!--fin cuerpo de las tareas-->
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/moment.js"></script>
     <script src="assets/js/index.js" ></script>
+    <script src="assets/js/create_task.js"></script>
 </body>
 </html>
