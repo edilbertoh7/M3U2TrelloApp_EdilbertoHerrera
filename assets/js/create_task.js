@@ -56,6 +56,10 @@ function updateTask(id,state) {
   axios.patch(`${API_URL}/task/${id}.json`, payload)
   .then(function (response) {
     //console.log(response);
+    setTimeout(() => {
+      
+      location.reload();
+    }, 1000);
   })
   .catch(function (error) {
     console.log(error);

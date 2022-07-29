@@ -48,7 +48,6 @@ function startDiv(valor) {
 
         dropZone.addEventListener("dragover", e => {
             e.preventDefault();
-
         });
 
         dropZone.addEventListener("dragleave", e => {
