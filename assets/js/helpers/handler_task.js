@@ -1,18 +1,21 @@
-function new_task(title,responsible,description,end_date) {
+function new_task(title,description,end_date) {
 
-    const date = new Date()
+  var responsible = document.getElementById("responsible");
+var responsible = responsible.options[responsible.selectedIndex];
+
+
+    const date = new Date(),
     dia = date.getDate(),
     mes = date.getMonth(),
     anio = date.getFullYear(),
-    datenow = `${dia}/0${mes}/${anio}`
-    alert("Nueva tarea creada")
-   // alert(title+'/'+responsible+'/'+description)
-   // const API_URL ="https://telloapp-b8a8f-default-rtdb.firebaseio.com";
+    datenow = `${dia}/0${mes+1}/${anio}`
+    
+  
 
-    payload = {
+ const payload = {
         "id":1,
         "title":title,
-        "person":responsible,
+        "person":responsible.text,
         "description":description,
         "state":"to_do",
         "deadline":end_date,
@@ -29,16 +32,17 @@ function new_task(title,responsible,description,end_date) {
     <h4>${title}</h4>
     <h6>responsable: ${responsible}</h6>
     <h6>${description}</h6>
-    <h6>fecha creacion 16/07/2022</h6>
+    <h6>fecha creacion ${datenow}</h6>
     <h6>fecha entrega ${end_date}</h6>
     <h6>Tarea por hacer</h6>
 
 </div>
 `
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+})
+.catch(function (error) {
+  console.log(error);
+});
+alert(`Tarea "${title}" creada`)
   setTimeout(() => {
     
       location.reload();
@@ -56,6 +60,10 @@ function updateTask(id,state) {
   axios.patch(`${API_URL}/task/${id}.json`, payload)
   .then(function (response) {
     //console.log(response);
+    setTimeout(() => {
+      
+      location.reload();
+    }, 1000);
   })
   .catch(function (error) {
     console.log(error);
